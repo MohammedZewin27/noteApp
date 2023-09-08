@@ -45,7 +45,7 @@ class CustomCardView extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 24,top: 16),
             child: Text(
-              'May21 , 25/10/2023',
+              'May21 2023',
               textAlign: TextAlign.end,
               style: TextStyle(
                   color: Colors.black.withOpacity(0.6),

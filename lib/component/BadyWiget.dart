@@ -17,9 +17,6 @@ class BadyWidget extends StatelessWidget {
         child: Column(
           children: [
             AppBarWidget(),
-            SizedBox(
-              height: 10,
-            ),
             NotesListView()
           ],
         ),
