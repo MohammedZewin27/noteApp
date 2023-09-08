@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'CustomTextFormField.dart';
+
 class AddNoteBottomSheet extends StatelessWidget {
   const AddNoteBottomSheet({
     super.key,
@@ -7,13 +9,15 @@ class AddNoteBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 16),
+      child: const Column(
         children: [
-          Text('data'),
+          CustomTextFormField()
         ],
       ),
-
     );
   }
 }
+
+
