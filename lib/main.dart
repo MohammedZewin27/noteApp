@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:note/constants/constantForApp.dart';
 import 'package:note/views/notes_view.dart';
 
 void main() {
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
+        fontFamily: fontsForNote
       ),
       initialRoute: NotesView.routeName,
       routes: {
