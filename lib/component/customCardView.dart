@@ -18,6 +18,7 @@ class CustomCardView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
+
           ListTile(
             title: const Text(
               'DATA',
