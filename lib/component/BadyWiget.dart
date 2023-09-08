@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'appBarWidget.dart';
 import 'customCardView.dart';
-import 'listVewItems.dart';
+import 'listViewItems.dart';
 
 class BadyWidget extends StatelessWidget {
   const BadyWidget({
