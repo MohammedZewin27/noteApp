@@ -10,8 +10,4 @@ class NotesSuccess extends NotesState {
 
   NotesSuccess(this.notes);
 }
-class NotesFailure extends NotesState {
-  final String errorMassage;
 
-  NotesFailure(this.errorMassage);
-}
