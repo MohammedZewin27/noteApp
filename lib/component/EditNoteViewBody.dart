@@ -9,7 +9,7 @@ class EditNoteViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
+    return   Padding(
       padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
       child: Column(
         children: [
@@ -19,7 +19,7 @@ class EditNoteViewBody extends StatelessWidget {
           SizedBox(height: 10,),
           CustomTextFormField(hintText: 'subject',maxLines: 8,),
           SizedBox(height: 10,),
-          CustomButton(text: 'Edit'),
+          CustomButton(text: 'Edit',onTap: (){}),
           SizedBox(height: 16,),
         ],
       ),
