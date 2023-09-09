@@ -4,21 +4,26 @@ import 'CustomsSearchIcons.dart';
 
 class AppBarWidget extends StatelessWidget {
   const AppBarWidget({
+    required this.title,
+    required this.icon,
     super.key,
   });
 
+  final String title;
+  final IconData icon;
+
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'Notes',
+          title,
           style: TextStyle(
             fontSize: 28,
           ),
         ),
-        CustomsSearchIcons(),
+        CustomsSearchIcons(icon:icon),
       ],
     );
   }

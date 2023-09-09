@@ -16,7 +16,7 @@ class BadyWidget extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
         child: Column(
           children: [
-            AppBarWidget(),
+            AppBarWidget(title: 'Notes',icon: Icons.search),
             NotesListView()
           ],
         ),
