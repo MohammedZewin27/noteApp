@@ -6,12 +6,11 @@ import 'package:note/model/noteModel.dart';
 import 'package:note/views/editNoteView.dart';
 import 'package:note/views/notes_view.dart';
 
-void main()async {
+void main() async {
   await Hive.initFlutter();
   await Hive.openBox(kNotesBox);
   Hive.registerAdapter(NoteModelAdapter());
-  runApp(
-      const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,10 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        fontFamily: fontsForNote
-      ),
+      theme: ThemeData(brightness: Brightness.dark, fontFamily: fontsForNote),
       initialRoute: NotesView.routeName,
       routes: {
         NotesView.routeName: (context) => NotesView(),
