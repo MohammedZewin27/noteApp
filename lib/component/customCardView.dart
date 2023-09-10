@@ -26,14 +26,14 @@ class CustomCardView extends StatelessWidget {
           left: 16,
         ),
         decoration: BoxDecoration(
-          color:  Color(note.color),
+          color: Color(note.color),
           borderRadius: BorderRadius.circular(16),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
-              title:  Text(
+              title: Text(
                 note.title,
                 style: TextStyle(color: Colors.black, fontSize: 26),
               ),
@@ -46,7 +46,11 @@ class CustomCardView extends StatelessWidget {
                 ),
               ),
               trailing: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  note.delete();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('note deleted')));
+                },
                 icon: const Icon(
                   FontAwesomeIcons.trash,
                   color: Colors.black,
