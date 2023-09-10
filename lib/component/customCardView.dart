@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:note/constants/constantForApp.dart';
+import 'package:note/cubits/notes_cubit/notes_cubit.dart';
 import 'package:note/model/noteModel.dart';
 
 import '../views/editNoteView.dart';
@@ -48,8 +50,20 @@ class CustomCardView extends StatelessWidget {
               trailing: IconButton(
                 onPressed: () {
                   note.delete();
+                  BlocProvider.of<NotesCubit>(context).fetchAllNotes();
                   ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(content: Text('note deleted')));
+                     const SnackBar(
+                       backgroundColor: Colors.red,
+                      content: Text('note deleted',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontFamily: fontsForNote
+                      ),
+                      ),
+
+                    ),
+                  );
                 },
                 icon: const Icon(
                   FontAwesomeIcons.trash,
