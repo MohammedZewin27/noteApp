@@ -6,6 +6,7 @@ import 'package:note/model/noteModel.dart';
 
 import 'CustomButton.dart';
 import 'CustomTextFormField.dart';
+import 'colorsListView.dart';
 
 class AddNoteForm extends StatefulWidget {
   const AddNoteForm({
@@ -46,15 +47,20 @@ class _AddNoteFormState extends State<AddNoteForm> {
           const SizedBox(
             height: 10,
           ),
+          const ColorListView(),
+          const SizedBox(
+            height: 10,
+          ),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomButton(
-                isLoading: state is AddNoteLoading?true :false,
+                isLoading: state is AddNoteLoading ? true : false,
                 text: 'save',
                 onTap: () {
                   if (formKey.currentState!.validate()) {
-                    var currentDate=DateTime.now();
-                    var formatCurrentDate=DateFormat.yMd().format(currentDate);
+                    var currentDate = DateTime.now();
+                    var formatCurrentDate =
+                        DateFormat.yMd().format(currentDate);
                     formKey.currentState!.save();
                     NoteModel noteModel = NoteModel(
                         title: title!,
@@ -78,3 +84,5 @@ class _AddNoteFormState extends State<AddNoteForm> {
     );
   }
 }
+
+

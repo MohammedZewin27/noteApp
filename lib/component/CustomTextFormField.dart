@@ -7,12 +7,16 @@ class CustomTextFormField extends StatelessWidget {
     required this.hintText,
     this.maxLines = 1,
     this.onSaved,
+    this.onChanged,
+    this.text,
     super.key,
   });
 
   final int maxLines;
   final String hintText;
+  final String? text;
   final Function(String?)? onSaved;
+  final Function(String?)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +47,8 @@ class CustomTextFormField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
               borderSide: const BorderSide(color: primaryColor),
               borderRadius: BorderRadius.circular(16))),
+      onChanged: onChanged,
+      controller: TextEditingController(text: text),
     );
   }
 }
