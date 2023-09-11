@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:note/component/colorsListView.dart';
 import 'package:note/cubits/notes_cubit/notes_cubit.dart';
 import 'package:note/model/noteModel.dart';
 
+import '../constants/constantForApp.dart';
+import '../cubits/add_note_cubit/add_note_cubit.dart';
 import 'CustomButton.dart';
 import 'CustomTextFormField.dart';
 import 'appBarWidget.dart';
+import 'editNotesColorsList.dart';
 
 class EditNoteViewBody extends StatefulWidget {
   const EditNoteViewBody({super.key});
@@ -55,6 +59,10 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
           const SizedBox(
             height: 10,
           ),
+          EditNotesColorsList(noteModel: noteEdit,),
+          const SizedBox(
+            height: 10,
+          ),
           CustomButton(
               text: 'Edit',
               onTap: () {
@@ -70,3 +78,5 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
     );
   }
 }
+
+
